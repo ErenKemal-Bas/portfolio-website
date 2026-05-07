@@ -9,7 +9,7 @@
 <style>
 
 body{
-    background:#000;
+    background:#f5f5f7;
     display:flex;
     justify-content:center;
     align-items:center;
@@ -18,10 +18,11 @@ body{
 }
 
 .calculator{
-    background:#111827;
+    background:white;
     padding:30px;
-    border-radius:25px;
+    border-radius:30px;
     width:320px;
+    box-shadow:0 10px 40px rgba(0,0,0,0.1);
 }
 
 #display{
@@ -29,12 +30,11 @@ body{
     height:70px;
     margin-bottom:20px;
     border:none;
-    border-radius:15px;
+    border-radius:20px;
     font-size:30px;
     padding:10px;
     text-align:right;
-    background:#1e293b;
-    color:white;
+    background:#f3f4f6;
 }
 
 .buttons{
@@ -46,22 +46,27 @@ body{
 button{
     height:60px;
     border:none;
-    border-radius:15px;
+    border-radius:20px;
     font-size:20px;
     cursor:pointer;
-    background:#2563eb;
+    background:#111827;
     color:white;
-    transition:0.3s;
-}
-
-button:hover{
-    transform:scale(1.05);
 }
 
 .equal{
     grid-column:span 2;
+    background:#2563eb;
+}
+
+.back-btn{
+    position:absolute;
+    top:30px;
+    left:30px;
+    text-decoration:none;
+    color:#111827;
     background:white;
-    color:black;
+    padding:12px 20px;
+    border-radius:30px;
 }
 
 </style>
@@ -69,31 +74,35 @@ button:hover{
 </head>
 <body>
 
+<a href="./index.html" class="back-btn">
+← Back
+</a>
+
 <div class="calculator">
 
 <input type="text" id="display" disabled>
 
 <div class="buttons">
 
-<button onclick="append('7')">7</button>
-<button onclick="append('8')">8</button>
-<button onclick="append('9')">9</button>
-<button onclick="append('/')">/</button>
+<button onclick="appendValue('7')">7</button>
+<button onclick="appendValue('8')">8</button>
+<button onclick="appendValue('9')">9</button>
+<button onclick="appendValue('/')">/</button>
 
-<button onclick="append('4')">4</button>
-<button onclick="append('5')">5</button>
-<button onclick="append('6')">6</button>
-<button onclick="append('*')">*</button>
+<button onclick="appendValue('4')">4</button>
+<button onclick="appendValue('5')">5</button>
+<button onclick="appendValue('6')">6</button>
+<button onclick="appendValue('*')">*</button>
 
-<button onclick="append('1')">1</button>
-<button onclick="append('2')">2</button>
-<button onclick="append('3')">3</button>
-<button onclick="append('-')">-</button>
+<button onclick="appendValue('1')">1</button>
+<button onclick="appendValue('2')">2</button>
+<button onclick="appendValue('3')">3</button>
+<button onclick="appendValue('-')">-</button>
 
-<button onclick="append('0')">0</button>
-<button onclick="append('.')">.</button>
+<button onclick="appendValue('0')">0</button>
+<button onclick="appendValue('.')">.</button>
 <button onclick="clearDisplay()">C</button>
-<button onclick="append('+')">+</button>
+<button onclick="appendValue('+')">+</button>
 
 <button class="equal" onclick="calculate()">=</button>
 
@@ -105,7 +114,7 @@ button:hover{
 
 const display = document.getElementById("display");
 
-function append(value){
+function appendValue(value){
     display.value += value;
 }
 
@@ -119,4 +128,5 @@ function calculate(){
 
 </script>
 
-<a href="./index.html" class="back-btn"></a>
+</body>
+</html>
