@@ -1,0 +1,167 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial, sans-serif;
+    background:#000;
+    color:white;
+    overflow-x:hidden;
+}
+
+.background-blur{
+    position:fixed;
+    width:500px;
+    height:500px;
+    background:#2563eb;
+    filter:blur(180px);
+    opacity:0.4;
+    top:-100px;
+    right:-100px;
+    z-index:-1;
+}
+
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:30px 80px;
+}
+
+.logo{
+    font-size:28px;
+    font-weight:bold;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:30px;
+}
+
+nav a{
+    text-decoration:none;
+    color:white;
+    transition:0.3s;
+}
+
+nav a:hover{
+    opacity:0.6;
+}
+
+.hero{
+    min-height:100vh;
+}
+
+.hero-content{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    margin-top:150px;
+}
+
+.hero-content h1{
+    font-size:70px;
+    width:800px;
+    line-height:1.1;
+}
+
+.hero-content p{
+    margin-top:20px;
+    color:#cbd5e1;
+    font-size:20px;
+}
+
+button{
+    margin-top:30px;
+    padding:15px 35px;
+    border:none;
+    border-radius:40px;
+    background:white;
+    color:black;
+    font-size:16px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    transform:scale(1.05);
+}
+
+.glass{
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(20px);
+    border:1px solid rgba(255,255,255,0.1);
+}
+
+.about{
+    margin:100px auto;
+    width:80%;
+    padding:50px;
+    border-radius:30px;
+}
+
+.about h2{
+    font-size:40px;
+    margin-bottom:20px;
+}
+
+.about p{
+    color:#cbd5e1;
+    line-height:1.7;
+}
+
+.projects{
+    width:80%;
+    margin:auto;
+    margin-bottom:100px;
+}
+
+.projects h2{
+    font-size:40px;
+    margin-bottom:40px;
+}
+
+.project-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+}
+
+.card{
+    padding:30px;
+    border-radius:25px;
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+}
+
+.card h3{
+    margin-bottom:15px;
+    font-size:24px;
+}
+
+.card p{
+    color:#cbd5e1;
+}
+
+@media(max-width:900px){
+
+    nav{
+        padding:20px;
+        flex-direction:column;
+        gap:20px;
+    }
+
+    .hero-content h1{
+        font-size:45px;
+        width:90%;
+    }
+
+}
